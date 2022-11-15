@@ -6,20 +6,20 @@ import java.util.PriorityQueue;
 class Solution {
 	public int findKthLargest(int[] x, int k) {
 
-		PriorityQueue<Integer>pq = new PriorityQueue<>();
-		
-		for(int i=0;i<k;i++) {
+		PriorityQueue<Integer> pq = new PriorityQueue<>();
+
+		for (int i = 0; i < k; i++) {
 			pq.add(x[i]);
 		}
-		
-		for(int i=k;i<x.length;i++) {
-			
-			if(pq.peek() < x[i]) {
+
+		for (int i = k; i < x.length; i++) {
+
+			if (pq.peek() < x[i]) {
 				pq.poll();
 				pq.add(x[i]);
 			}
 		}
-		
+
 		return pq.peek();
 	}
 }
@@ -39,7 +39,7 @@ public class Main {
 
 		Solution s = new Solution();
 
-		int[] x = { 3,2,1,5,6,4 };
+		int[] x = { 3, 2, 1, 5, 6, 4 };
 
 		System.out.println(s.findKthLargest(x, 2));
 	}

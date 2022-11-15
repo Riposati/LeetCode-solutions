@@ -8,31 +8,31 @@ import java.math.BigDecimal;
 class Solution {
 	public double myPow(double x, int n) {
 
-        if(x < 0 && n < 0){
-            x*=-1;
-            n*=-1;
-        }
+		if (x < 0 && n < 0) {
+			x *= -1;
+			n *= -1;
+		}
 
-        if(x==1)
-            return 1.0;
+		if (x == 1)
+			return 1.0;
 
-        if(x==-1)
-            return -1.0;
+		if (x == -1)
+			return -1.0;
 
-        if(n==-2147483648)
-            return 0.0;
-        
-        BigDecimal p = new BigDecimal(x);
+		if (n == -2147483648)
+			return 0.0;
+
+		BigDecimal p = new BigDecimal(x);
 
 		int n2 = n;
 		if (n2 < 0)
 			n2 *= -1;
 
 		if (n < 0)
-			p = new BigDecimal(1 / Math.pow(x,n2));
+			p = new BigDecimal(1 / Math.pow(x, n2));
 
 		else {
-			p = new BigDecimal(Math.pow(x,n2));
+			p = new BigDecimal(Math.pow(x, n2));
 		}
 
 		return p.doubleValue();
