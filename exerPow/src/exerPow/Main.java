@@ -12,25 +12,25 @@ class Solution {
 			x *= -1;
 			n *= -1;
 		}
-        
+	
 		if (x == 1)
 			return 1.0;
-
+	
 		if (x == -1)
 			return -1.0;
-
-        if (n == -2147483648)
-		    return 0.0;
-
+	
+		if (n == -2147483648)
+			return 0.0;
+	
 		Double p = x;
-
+	
 		int n2 = n;
 		if (n2 < 0)
 			n2 *= -1;
-
+	
 		if (n < 0)
 			p = 1 / Math.pow(x, n2);
-
+	
 		else {
 			p = Math.pow(x, n2);
 		}
